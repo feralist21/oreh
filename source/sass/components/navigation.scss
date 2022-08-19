@@ -1,0 +1,39 @@
+.navigation__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.navigation__item {
+  width: 25%;
+}
+
+.navigation__link {
+  display: block;
+  width: 100%;
+  padding: 11px 10px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.22;
+  text-align: center;
+  color: $white;
+  border: 3px solid $yellow;
+  border-radius: 100px;
+  @include transition(color);
+}
+
+.navigation__link:hover {
+  color: $yellow;
+  @include transition(color);
+}
+
+@media (max-width: $xl) {
+  .navigation__item:last-child span {
+    display: none;
+  }
+
+  .navigation__link {
+    font-size: 16px;
+  }
+}
