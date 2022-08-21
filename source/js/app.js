@@ -59,6 +59,7 @@
 $('document').ready(function () {
   toggleMobileMenu();
   setAboutSlider();
+  setAccordionFaq();
 });
 
 function toggleMobileMenu() {
@@ -93,5 +94,20 @@ function setAboutSlider() {
         }
       },
     ]
+  });
+}
+
+function setAccordionFaq() {
+  $('.f-accordion__item').click(function () {
+    if (!$(this).hasClass('active')) {
+      $('.f-accordion__item-content').slideUp();
+      $('.f-accordion__item').removeClass('active');
+
+      $(this).addClass('active');
+      $(this).find('.f-accordion__item-content').slideDown();
+    } else {
+      $(this).removeClass('active');
+      $(this).find('.f-accordion__item-content').slideUp();
+    }
   });
 }

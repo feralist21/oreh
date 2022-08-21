@@ -132,6 +132,10 @@
 }
 
 @media (max-width: $md) {
+  .scheme {
+    padding: 60px 0 70px;
+  }
+
   .scheme__list {
     flex-direction: column;
     gap: 30px;

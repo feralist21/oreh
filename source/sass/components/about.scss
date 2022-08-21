@@ -126,6 +126,10 @@
 }
 
 @media (max-width: $md) {
+  .about {
+    padding: 60px 0 70px;
+  }
+
   .about__slider {
     margin-top: 40px;
   }
