@@ -16,6 +16,11 @@
     <header class="header">
       <div class="container">
         <div class="header__top">
+          <div class="header__toggle">
+            <button class="header__toggle-btn js-toggle">
+              <span class="header__toggle-span">Меню</span>
+            </button>
+          </div>
           <a class="header__logo-link" href="/">
             <img
               class="header__logo"
@@ -27,12 +32,15 @@
             Прием кедрового ореха<br />
             в Иркутской области
           </p>
-          <a class="header__phone" href="tel:+73952676356"
-            >+ 7 (3952) 67-63-56</a
+          <a class="header__phone" href="tel:+73952676356">
+            <svg>
+              <use xlink:href="img/sprite.svg#phone"></use>
+            </svg>
+            <span>+ 7 (3952) 67-63-56</span></a
           >
           <p class="header__work-time">Пн-пт 09.00-18.00</p>
         </div>
-        <nav class="navigation">
+        <nav class="navigation js-menu">
           <ul class="navigation__list">
             <li class="navigation__item">
               <a class="navigation__link anc" href="#company">О компании</a>
@@ -71,7 +79,8 @@
               <svg>
                 <use xlink:href="img/sprite.svg#whatsapp"></use>
               </svg>
-              <span>Написать в WhatsApp</span></a>
+              <span>Написать в WhatsApp</span></a
+            >
           </div>
         </div>
       </section>

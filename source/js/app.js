@@ -56,4 +56,14 @@
 
 // });
 
+$('document').ready(function () {
+  toggleMobileMenu();
+});
 
+function toggleMobileMenu() {
+  $('.js-toggle').click(function () {
+    $(this).toggleClass('active');
+    $('.js-menu').toggleClass('navigation--active');
+    $('.header').toggleClass('header--active');
+  });
+}
