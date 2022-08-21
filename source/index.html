@@ -228,8 +228,79 @@
           </div>
         </div>
       </section>
+      <section class="feedback">
+        <div class="container">
+          <div class="feedback__wrap">
+            <h2 class="feedback__title">Закажите обратный звонок</h2>
+            <p class="feedback__subtitle">
+              И мы свяжемся с вами в ближайшее время
+            </p>
+            <form class="feedback__form" action="" id="callback-froz">
+              <input type="hidden" name="act" value="callback-zam" />
+              <input
+                class="feedback__input"
+                type="text"
+                name="req-name"
+                id="req-name"
+                placeholder="Имя*"
+                required=""
+              />
+              <input
+                class="feedback__input"
+                type="text"
+                name="req-phone"
+                id="req-phone"
+                placeholder="Телефон*"
+                required=""
+              />
+              <textarea
+                class="feedback__textarea"
+                name="req-comment"
+                id="req-comment"
+                placeholder="Какой вопрос желаете уточнить?"
+              ></textarea>
+              <div class="feedback__check-wrapper">
+                <input
+                  class="feedback__check"
+                  type="checkbox"
+                  name="checkbox"
+                  id="checkbox"
+                  required=""
+                />
+                <label class="feedback__label" for="checkbox">
+                  Разрешаю обработку <a href="#policy">персональных данных</a>
+                </label>
+              </div>
+              <button class="feedback__submit" type="submit">
+                Перезвоните мне
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer></footer>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrap">
+          <div class="footer__left">
+            <a class="header__phone" href="tel:+73952676356">
+              <svg>
+                <use xlink:href="img/sprite.svg#phone"></use>
+              </svg>
+              <span>+ 7 (3952) 67-63-56</span></a
+            >
+            <p class="header__work-time">Пн-пт 09.00-18.00</p>
+          </div>
+          <div class="footer__right">
+            <p class="footer__address">
+              Иркутская область, п. Залари, 1678 км<br />
+              федеральной трассы Р255
+            </p>
+            <a class="footer__mail" href="mailto:sibiri_dary@bk.ru">sibiri_dary@bk.ru</a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- <div class="policy mfp-hide" id="policy">
     <div class="policy__wrapper">
       <h2>Согласие на обработку персональных данных клиентов – физических лиц</h2>

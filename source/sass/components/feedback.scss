@@ -1,0 +1,264 @@
+.feedback {
+  padding: 100px 0;
+  background-image: url("../img/feedback-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.feedback__wrap {
+  max-width: 635px;
+  background-color: $yellow;
+  padding: 45px 35px 60px;
+  border-radius: 40px;
+  box-shadow: 0px 20px 20px rgba(51, 36, 26, 0.1);
+  position: relative;
+}
+
+.feedback__wrap::after {
+  content: '';
+  display: block;
+  width: 296px;
+  height: 269px;
+  background-image: url('../img/sale-oreh.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  bottom: 0;
+  right: -390px;
+  z-index: 1;
+}
+
+.feedback__title {
+  margin-bottom: 25px;
+  font-size: 40px;
+  line-height: 1.375;
+  font-weight: 700;
+  color: $light_black;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.feedback__subtitle {
+  margin-bottom: 30px;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 400;
+  text-align: center;
+  color: $light_black;
+}
+
+.feedback__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback__input,
+.feedback__textarea {
+  display: block;
+  width: 100%;
+  padding: 33px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 60px;
+  font-family: inherit;
+  font-size: 25px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: $light_black;
+}
+
+.feedback__input::placeholder,
+.feedback__textarea::placeholder {
+  color: $light_black;
+}
+
+.feedback__input:hover,
+.feedback__input:focus,
+.feedback__textarea:hover,
+.feedback__textarea:focus {
+  box-shadow: 0 0 0 3px $white;
+}
+
+.feedback__textarea {
+  height: 97px;
+  resize: none;
+}
+
+.feedback__submit {
+  display: block;
+  width: 100%;
+  padding: 33px 40px;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  line-height: 1.2;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $light_black;
+  color: $white;
+  border-radius: 100px;
+  cursor: pointer;
+  @include transition(all);
+}
+
+.feedback__submit:hover {
+  background-color: $white;
+  color: $light_black;
+  @include transition(all);
+}
+
+.feedback__check-wrapper {
+  position: relative;
+  margin: 20px 0;
+}
+
+.feedback__check {
+  width: 38px;
+  height: 38px;
+  opacity: 0;
+  z-index: -10000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.feedback__label {
+  display: block;
+  padding-left: 54px;
+  font-size: 20px;
+  color: $light_black;
+  cursor: pointer;
+  position: relative;
+}
+
+.feedback__label a {
+  color: $light_black;
+}
+
+.feedback__label::before {
+  content: "";
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  background-color: $white;
+  position: absolute;
+  top: -8px;
+  left: 0;
+}
+
+.feedback__label:after {
+  content: "";
+  display: none;
+  width: 38px;
+  height: 38px;
+  background-image: url('../img/sprite.svg#check-active');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: -8px;
+  left: 0;
+  position: absolute;
+}
+
+.feedback__check:checked + .feedback__label::after {
+  display: block;
+}
+
+@media (max-width: $xl) {
+  .feedback__wrap::after {
+    right: -330px;
+  }
+}
+
+@media (max-width: $lg) {
+  .feedback {
+    padding: 60px 0;
+  }
+  .feedback__wrap::after {
+    display: none;
+  }
+
+  .feedback__title {
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+
+  .feedback__subtitle {
+    font-size: 20px;
+  }
+
+  .feedback__form {
+    gap: 15px;
+  }
+
+  .feedback__input, .feedback__textarea {
+    padding: 20px 30px;
+    font-size: 20px;
+    border-radius: 30px;
+  }
+
+  .feedback__textarea {
+    height: 64px;
+  }
+
+  .feedback__check-wrapper {
+    margin: 15px 0;
+  }
+
+  .feedback__label {
+    font-size: 16px;
+    padding-left: 40px;
+  }
+
+  .feedback__submit {
+    padding: 20px 30px;
+    font-size: 20px;
+  }
+
+  .feedback__label:before,
+  .feedback__label::after {
+    width: 30px;
+    height: 30px;
+    top: -7px;
+  }
+}
+
+@media (max-width: $sm) {
+  .feedback__wrap {
+    padding: 25px 15px 35px;
+  }
+
+  .feedback__title {
+    margin-bottom: 6px;
+    font-size: 24px;
+  }
+
+  .feedback__subtitle {
+    font-size: 18px;
+  }
+
+  .feedback__input, .feedback__textarea {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+
+  .feedback__textarea {
+    height: 50px;
+  }
+
+  .feedback__submit {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback__label:after, .feedback__label:before {
+    top: 0;
+  }
+}
