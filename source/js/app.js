@@ -60,6 +60,16 @@ $('document').ready(function () {
   toggleMobileMenu();
   setAboutSlider();
   setAccordionFaq();
+  slowlyAnchor();
+  setFeedbackForm();
+
+  var phoneMask1 = IMask(document.getElementById('req-phone'), {
+    mask: '+{7}(000)000-00-00'
+  });
+
+  $('a[href="#policy"]').magnificPopup({
+    type: 'inline',
+  });
 });
 
 function toggleMobileMenu() {
@@ -109,5 +119,33 @@ function setAccordionFaq() {
       $(this).removeClass('active');
       $(this).find('.f-accordion__item-content').slideUp();
     }
+  });
+}
+
+function slowlyAnchor() {
+  $('.anc').on('click', function (event) {
+    event.preventDefault();
+    var sc = $(this).attr('href'),
+      dn = $(sc).offset().top;
+    $('html, body').animate({ scrollTop: dn }, 500);
+  });
+}
+
+function setFeedbackForm() {
+  $(document).on('submit', '#feedback__form', function () {
+    var form = $(this);
+    $.post('/forms/callback.php', form.serializeArray(), function (data) {
+      if (data) {
+        $.magnificPopup.close();
+        $.magnificPopup.open({
+          items: {
+            src: '<div class="modal modal__result">' + data + '</div>',
+            type: 'inline'
+          }
+        });
+        form.trigger('reset');
+      }
+    });
+    return false;
   });
 }
